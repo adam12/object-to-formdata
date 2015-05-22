@@ -69,6 +69,7 @@
                     form.append(name, value, value.name);
                     return true; // prevent step into
                 default:
+                    if (!value) return true; // don't convert null to "null"
                     var name = toName(path);
                     form.append(name, value);
                     return true; // prevent step into
